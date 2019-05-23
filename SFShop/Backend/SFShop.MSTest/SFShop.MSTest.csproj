@@ -1,48 +1,65 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile></DocumentationFile>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DocumentationFile></DocumentationFile>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Remove="appsettings.Development.json" />
-    <None Remove="appsettings.json" />
-  </ItemGroup>
 
   <ItemGroup>
     <Content Include="appsettings.Development.json">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="appsettings.json">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.5.0" />
-    <PackageReference Include="Moq" Version="4.7.145" />
-    <PackageReference Include="MSTest.TestAdapter" Version="1.2.0" />
-    <PackageReference Include="MSTest.TestFramework" Version="1.2.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
+    <PackageReference Include="Moq" Version="4.10.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="1.3.2" />
+    <PackageReference Include="MSTest.TestFramework" Version="1.3.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Server\Sys\SF.Sys.Hosting\SF.Sys.Hosting.csproj" />
-    <ProjectReference Include="..\..\..\Server\Sys\SF.Sys.ServiceFeatures.Implements\SF.Sys.ServiceFeatures.Implements.csproj" />
-    <ProjectReference Include="..\..\..\Server\Sys\SF.Sys.ServiceFeatures\SF.Sys.ServiceFeatures.csproj" />
-    <ProjectReference Include="..\..\..\Server\Sys\SF.Sys.Services.Managment\SF.Sys.Services.Management.csproj" />
-    <ProjectReference Include="..\..\..\Server\Sys\SF.Sys.Services\SF.Sys.Services.csproj" />
-    <ProjectReference Include="..\..\..\Server\Sys\SF.Sys.UnitTest\SF.Sys.UnitTest.csproj" />
+    <ProjectReference Include="..\..\SF.Server\Common\SF.Common.UnitTest\SF.Common.UnitTest.csproj" />
+    <ProjectReference Include="..\..\SF.Server\Sys\SF.Sys.UnitTest\SF.Sys.UnitTest.csproj" />
+    <ProjectReference Include="..\..\SF.Server\Sys\SF.Sys.Hosting\SF.Sys.Hosting.csproj" />
+    <ProjectReference Include="..\..\SF.Server\Sys\SF.Sys.ServiceFeatures.Implements\SF.Sys.ServiceFeatures.Implements.csproj" />
+    <ProjectReference Include="..\..\SF.Server\Sys\SF.Sys.ServiceFeatures\SF.Sys.ServiceFeatures.csproj" />
+    <ProjectReference Include="..\..\SF.Server\Sys\SF.Sys.Services.Managment\SF.Sys.Services.Management.csproj" />
+    <ProjectReference Include="..\..\SF.Server\Sys\SF.Sys.Services\SF.Sys.Services.csproj" />
+    <ProjectReference Include="..\..\SF.Server\Utils\SF.Utils.Parsers\SF.Utils.Parsers.csproj" />
     <ProjectReference Include="..\SFShop.Backend\SFShop.Backend.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Update="nlog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="PairRecordTest\" />
+  </ItemGroup>
+
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties appsettings_1json__JSONSchema="" />
+    </VisualStudio>
+  </ProjectExtensions>
+
 
 </Project>

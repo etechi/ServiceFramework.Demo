@@ -15,13 +15,13 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Hygou": {
+    "SFShopSite": {
       "commandName": "Project",
+      "commandLineArgs": "init-services11111",
       "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      },
-      "applicationUrl": "http://localhost:52707/"
+      }
     }
   }
 }

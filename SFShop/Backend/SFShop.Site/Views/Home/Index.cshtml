@@ -1,27 +1,13 @@
 ﻿
-@{ Html.UIBlock("幻灯片区域"); }
-<div>
-    <div class="container">
-        @*@{ Html.UIBlock("公告区"); }*@
-    </div>
-</div>
-<div class="container body-content" id="home-main-content"> 
-    @{ Html.UIBlock("主体内容"); }
-    <div id="left_panel" style="visibility:hidden">
-        <a href="javascript:;" data-action="gotop">
-            <span>
-                <span class="fa fa-angle-up"></span>
-                TOP
-            </span>
-            <span>
-                返回顶部123
-            </span>
-        </a>
-    </div>
-</div>
- 
+@section header{
+	<style>
+		body{background-color:#eee}
+	</style>
+}
+
+<div style="font-family:Impact;font-size:80px;color:#bbb;letter-spacing:10px; text-align:center;padding:200px;">BCA Back Service</div>
+
 @section scripts{
-    <script>
-		window.boot("home");
-    </script>
+	<script>
+	</script>
 }
